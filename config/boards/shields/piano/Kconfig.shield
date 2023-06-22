@@ -1,0 +1,8 @@
+# vim: ft=kconfig ts=4 sts=4 sw=4 noet
+
+config SHIELD_PIANO_LEFT
+	def_bool $(shields_list_contains,piano_left)
+
+config SHIELD_PIANO_RIGHT
+	def_bool $(shields_list_contains,piano_right)
+

@@ -1,0 +1,6 @@
+// vim: ft=dts ts=4 sts=4 sw=4 noet
+#include "piano.dtsi"
+
+&default_transform {
+	col-offset = <9>;
+};

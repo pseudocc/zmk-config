@@ -1,0 +1,27 @@
+// vim: ft=dts et sts=8
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+// Just to debug if the keyboard is working
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                                &kp Q           &kp W           &kp E           /**/    &kp U           &kp I           &kp O
+                &kp A           &kp S           &kp D           &mo 1           /**/    &kp H           &kp J           &kp K           &kp L
+                                                &kp SPACE       &bt BT_CLR      /**/    &kp SPACE       &kp SPACE
+            >;
+        };
+
+        test_mo1_layer {
+            bindings = <
+                                &kp Z           &kp X           &kp C           /**/    &kp T           &kp G           &kp P
+                &kp V           &kp B           &kp N           &kp M           /**/    &kp A           &kp B           &kp C           &kp D
+                                                &kp SPACE       &none           /**/    &kp SPACE       &kp SPACE
+            >;
+        };
+    };
+};
