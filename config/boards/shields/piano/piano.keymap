@@ -1,27 +1,142 @@
-// vim: ft=dts et sts=8
+// vim: ft=dts ts=4 sts=4 sw=4 et
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+&mt {
+    tapping-term-ms = <150>;
+    flavor = "tap-preferred";
+};
+
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
+};
+
+#define ALC  0
+#define ALR  1
+#define NUM  2
+#define SYM1 3
+#define SYM2 4
+#define SYS  5
+#define FN   6
+#define BT   7
+
 // Just to debug if the keyboard is working
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            timeout-ms = <30>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+            layers = <ALC ALR>;
+        };
+
+        combo_caps {
+            timeout-ms = <30>;
+            key-positions = <3 4 5>;
+            bindings = <&kp CAPS>;
+            layers = <ALC ALR>;
+        };
+
+        combo_bt {
+            timeout-ms = <30>;
+            key-positions = <10 11 12>;
+            bindings = <&to BT>;
+            layers = <SYS>;
+        };
+    };
+
+    behaviors {
+        mk: momentary_keypress {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOMENTARY_KEYPRESS";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+
+        ms: momentary_stickylayer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOMENTARY_STICKYLAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&sl>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            bindings = <
-                                &kp Q           &kp W           &kp E           /**/    &kp U           &kp I           &kp O
-                &kp A           &kp S           &kp D           &mo 1           /**/    &kp H           &kp J           &kp K           &kp L
-                                                &kp SPACE       &bt BT_CLR      /**/    &kp SPACE       &kp SPACE
-            >;
+        alpha_common {
+        bindings = <
+                &mt LCTRL COMMA &mt LALT  P     &mt LCMD  I     &mt RCMD  D     &mt RALT  C     &mt RCTRL R
+&mk FN    A     &mk SYM1  O     &mk SYM2  E     &mk SYS   U     &mk SYS   H     &mk SYM2  T     &mk SYM1  N     &mk FN    S
+                                &mt LSHFT SPACE &key_repeat     &ms NUM   NUM   &ms ALR ALR
+        >;
         };
 
-        test_mo1_layer {
-            bindings = <
-                                &kp Z           &kp X           &kp C           /**/    &kp T           &kp G           &kp P
-                &kp V           &kp B           &kp N           &kp M           /**/    &kp A           &kp B           &kp C           &kp D
-                                                &kp SPACE       &none           /**/    &kp SPACE       &kp SPACE
-            >;
+        alpha_rare {
+        bindings = <
+                &kp DOT         &kp Y           &kp F           &kp G           &kp L           &kp V
+&kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp RET
+                                &trans          &kp UNDER       &kp BSPC        &kp Z
+        >;
+        };
+
+        numbers {
+        bindings = <
+                &mt LCTRL PLUS  &mt LALT  N1    &mt LCMD  N2    &mt RCMD  N6    &mt RALT  N7    &mt RCTRL MINUS
+&kp STAR        &kp N3          &kp N4          &kp N5          &kp N8          &kp N9          &kp N0          &kp FSLH
+                                &none           &none           &none           &none
+        >;
+        };
+
+        symbols_1 {
+        bindings = <
+                &mt LCTRL LBRC  &mt LALT  LBKT  &mt LCMD  LPAR  &mt RCMD  RPAR  &mt RALT  RBKT  &mt RCTRL RBRC
+&kp CARET       &kp AT          &kp HASH        &kp DLLR        &kp COLON       &kp SEMI        &kp SQT         &kp DQT
+                                &none           &none           &none           &none
+        >;
+        };
+
+        symbols_2 {
+        bindings = <
+                &mt LCTRL AMPS  &mt LALT  PIPE  &mt LCMD  EXCL  &mt RCMD  QMARK &mt RALT  PRCNT &mt RCTRL EQUAL
+&none           &kp BSLH        &kp GRAVE       &kp TILDE       &kp LT          &kp GT          &kp SQT         &kp DQT
+                                &none           &none           &none           &none
+        >;
+        };
+
+        system {
+        bindings = <
+                &kp ESC         &kp TAB         &kp INS         &kp DEL         &kp HOME        &kp END
+&kp K_APP       &kp PSCRN       &kp PG_UP       &kp PG_DN       &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT
+                                &none           &none           &none           &none
+        >;
+        };
+
+
+        function_keys {
+        bindings = <
+                &none           &kp F1          &kp F2          &kp F6          &kp F7          &none
+&none           &kp F3          &kp F4          &kp F5          &kp F8          &kp F9          &kp F10         &none
+                                &kp F11         &none           &none           &kp F12
+        >;
+        };
+
+        bluetooth {
+        bindings = <
+                &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_PRV      &bt BT_NXT      &bt BT_CLR
+&none           &none           &none           &sys_reset      &sys_reset      &none           &none           &none
+                                &none           &none           &none           &to ALC
+        >;
         };
     };
 };
