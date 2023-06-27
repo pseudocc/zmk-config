@@ -15,10 +15,4 @@ if SHIELD_PIANO_LEFT || SHIELD_PIANO_RIGHT
 config ZMK_SPLIT
 	default y
 
-config ZMK_BLE
-	default y
-
-config ZMK_USB
-	default y
-
 endif # SHIELD_PIANO_LEFT || SHIELD_PIANO_RIGHT

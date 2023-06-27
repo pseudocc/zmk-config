@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 &mt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <250>;
     flavor = "tap-preferred";
 };
 
@@ -55,7 +55,7 @@
             label = "MOMENTARY_KEYPRESS";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -65,7 +65,7 @@
             label = "MOMENTARY_STICKYLAYER";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&sl>;
         };
