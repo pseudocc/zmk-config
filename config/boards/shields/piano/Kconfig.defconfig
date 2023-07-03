@@ -1,6 +1,6 @@
 # vim: ft=kconfig ts=4 sts=4 sw=4 noet
 
-if SHIELD_PIANO_LEFT
+if SHIELD_PIANO_RIGHT
 
 config ZMK_KEYBOARD_NAME
 	default "The Piano 2"
@@ -8,7 +8,7 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
-endif # SHIELD_PIANO_LEFT
+endif # SHIELD_PIANO_RIGHT
 
 if SHIELD_PIANO_LEFT || SHIELD_PIANO_RIGHT
 
