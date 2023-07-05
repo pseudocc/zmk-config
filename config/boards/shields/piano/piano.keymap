@@ -120,7 +120,7 @@
 
         alpha_rare {
         bindings = <
-                &kp DOT         &kp Y           &kp F           &kp G           &kp L           &kp V
+                &mt LCTRL DOT   &mt LALT  Y     &mt LCMD  F     &mt RCMD  G     &mt RALT  L     &mt RCTRL V
 &kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp RET
                                 &trans          &kp UNDER       &caps_word      &kp Z
         >;
