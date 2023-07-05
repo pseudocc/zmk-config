@@ -26,8 +26,8 @@
 
 #include "mouse.dtsi"
 
-#define COMBO_2KEYS 50
-#define COMBO_3KEYS 80
+#define COMBO_2KEYS 90
+#define COMBO_3KEYS (COMBO_2KEYS * 3 / 2)
 
 / {
     combos {
@@ -122,7 +122,7 @@
         bindings = <
                 &kp DOT         &kp Y           &kp F           &kp G           &kp L           &kp V
 &kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp RET
-                                &trans          &kp UNDER       &kp CAPS        &kp Z
+                                &trans          &kp UNDER       &caps_word      &kp Z
         >;
         };
 
@@ -152,8 +152,8 @@
 
         system {
         bindings = <
-                &mt LCTRL ESC   &mt LALT  TAB   &mt LCMD  INS   &mt RCMD  DEL   &mt RALT  HOME  &mt RCTRL END
-&kp K_APP       &kp PSCRN       &kp PG_UP       &kp PG_DN       &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT
+                &mt LCTRL INS   &mt LALT  DEL   &mt LCMD  HOME  &mt RCMD  END   &mt RALT  UP    &mt RCTRL CAPS
+&kp K_APP       &kp PSCRN       &kp PG_UP       &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp PAUSE_BREAK
                                 &kp LSHFT       &none           &none           &none
         >;
         };
@@ -161,7 +161,7 @@
 
         function_keys {
         bindings = <
-                &none           &kp F1          &kp F2          &kp F6          &kp F7          &none
+                &kp LCTRL       &mt LALT  F1    &mt LCMD  F2    &mt RCMD  F6    &mt RALT  F7    &kp RCTRL
 &none           &kp F3          &kp F4          &kp F5          &kp F8          &kp F9          &kp F10         &none
                                 &kp F11         &none           &none           &kp F12
         >;
@@ -170,7 +170,7 @@
         bluetooth {
         bindings = <
                 &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_PRV      &bt BT_NXT      &bt BT_CLR
-&none           &none           &none           &sys_reset      &sys_reset      &none           &none           &none
+&none           &bt BT_SEL 3    &bt BT_SEL 4    &sys_reset      &sys_reset      &none           &none           &none
                                 &none           &to ALC         &to ALC         &none
         >;
         };
