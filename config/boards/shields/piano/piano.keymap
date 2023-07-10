@@ -126,6 +126,13 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp ESC &kp COLON &kp X &kp RET>;
         };
+
+        rcw: realeasable_caps_word {
+            compatible = "zmk,behavior-macro";
+            label = "RELEASEABLE_CAPS_WORD";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp F17 &caps_word>;
+        };
     };
 
     behaviors {
@@ -165,7 +172,7 @@
         bindings = <
                 &mt LCTRL DOT   &mt LALT  Y     &mt LCMD  F     &mt RCMD  G     &mt RALT  L     &mt RCTRL V
 &kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp RET
-                                &trans          &kp UNDER       &caps_word      &kp Z
+                                &trans          &kp UNDER       &rcw            &kp Z
         >;
         };
 
