@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: pseudocc
-      revision: pseudocc
+      revision: main
       import: app/west.yml
   self:
     path: config

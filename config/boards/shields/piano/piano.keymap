@@ -26,8 +26,9 @@
 #define SHC  10
 
 #include "mouse.dtsi"
+#include "dances.dtsi"
 
-#define COMBO_2KEYS 60
+#define COMBO_2KEYS 40
 #define COMBO_3KEYS (COMBO_2KEYS * 3 / 2)
 
 / {
@@ -170,15 +171,15 @@
 
         alpha_rare {
         bindings = <
-                &mt LCTRL DOT   &mt LALT  Y     &mt LCMD  F     &mt RCMD  G     &mt RALT  L     &mt RCTRL V
-&kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp RET
+                &td_DOT_COMMA   &td_Y_P         &td_F_I         &td_G_D         &td_L_C         &td_V_R
+&td_Q_A         &td_X_O         &td_J_E         &td_K_U         &td_B_H         &td_M_T         &td_W_N         &td_RET_S
                                 &trans          &kp UNDER       &rcw            &kp Z
         >;
         };
 
         numbers {
         bindings = <
-                &mt LCTRL PLUS  &mt LALT  N1    &mt LCMD  N2    &mt RCMD  N6    &mt RALT  N7    &mt RCTRL MINUS
+                &td_PLUS_DOT    &kp N1          &kp N2          &kp N6          &kp N7          &kp MINUS
 &kp STAR        &kp N3          &kp N4          &kp N5          &kp N8          &kp N9          &kp N0          &kp FSLH
                                 &none           &none           &none           &none
         >;
@@ -186,7 +187,7 @@
 
         symbols_1 {
         bindings = <
-                &mt LCTRL LBRC  &mt LALT  LBKT  &mt LCMD  LPAR  &mt RCMD  RPAR  &mt RALT  RBKT  &mt RCTRL RBRC
+                &kp LBRC        &kp LBKT        &kp LPAR        &kp RPAR        &kp RBKT        &kp RBRC
 &kp CARET       &kp AT          &kp HASH        &kp DLLR        &kp COLON       &kp SEMI        &kp SQT         &kp DQT
                                 &none           &none           &none           &none
         >;
@@ -194,7 +195,7 @@
 
         symbols_2 {
         bindings = <
-                &mt LCTRL AMPS  &mt LALT  PIPE  &mt LCMD  EXCL  &mt RCMD  QMARK &mt RALT  PRCNT &mt RCTRL EQUAL
+                &kp AMPS        &kp PIPE        &kp EXCL        &kp QMARK       &kp PRCNT       &kp EQUAL
 &none           &kp BSLH        &kp GRAVE       &kp TILDE       &kp LT          &kp GT          &rarrow         &none
                                 &none           &none           &none           &none
         >;
@@ -202,7 +203,7 @@
 
         system {
         bindings = <
-                &mt LCTRL INS   &mt LALT  DEL   &mt LCMD  HOME  &mt RCMD  END   &mt RALT  UP    &mt RCTRL CAPS
+                &kp INS         &kp DEL         &kp HOME        &kp END         &kp UP          &kp CAPS
 &kp K_APP       &kp PSCRN       &kp PG_UP       &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp PAUSE_BREAK
                                 &kp LSHFT       &none           &none           &none
         >;
@@ -211,9 +212,9 @@
 
         function_keys {
         bindings = <
-                &kp LCTRL       &mt LALT  F1    &mt LCMD  F2    &mt RCMD  F6    &mt RALT  F7    &kp RCTRL
+                &none           &kp F1          &kp F2          &kp F6          &kp F7          &none
 &none           &kp F3          &kp F4          &kp F5          &kp F8          &kp F9          &kp F10         &none
-                                &kp F11         &none           &none           &kp F12
+                                &kp F11         &none           &kp F17         &kp F12
         >;
         };
 
@@ -227,7 +228,7 @@
 
         mouse_keys {
         bindings = <
-                &none           &mmv MOUSE_U    &none           &mkp MB1        &mkp MB2        &mkp MB3
+                &kp LCTRL       &mmv MOUSE_U    &none           &mkp MB1        &mkp MB2        &mkp MB3
 &none           &mmv MOUSE_L    &mmv MOUSE_D    &mmv MOUSE_R    &mkp MB4        &mkp MB5        &mkp MB6        &mkp MB7
                                 &mo WHID        &to ALC         &to ALC         &mo WHID
         >;
