@@ -39,28 +39,28 @@
             timeout-ms = <COMBO_2KEYS>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
-            layers = <ALC ALR>;
+            layers = <ALC ALR NUM>;
         };
 
         combo_tab {
             timeout-ms = <COMBO_2KEYS>;
             key-positions = <1 2>;
             bindings = <&kp TAB>;
-            layers = <ALC ALR>;
+            layers = <ALC ALR NUM>;
         };
 
         combo_del {
             timeout-ms = <COMBO_2KEYS>;
             key-positions = <3 4>;
             bindings = <&kp DEL>;
-            layers = <ALC ALR>;
+            layers = <ALC ALR NUM>;
         };
 
         combo_bspc {
             timeout-ms = <COMBO_2KEYS>;
             key-positions = <4 5>;
             bindings = <&kp BSPC>;
-            layers = <ALC ALR>;
+            layers = <ALC ALR NUM>;
         };
 
         combo_bt {
@@ -173,15 +173,15 @@
         bindings = <
                 &td_DOT_COMMA   &td_Y_P         &td_F_I         &td_G_D         &td_L_C         &td_V_R
 &td_Q_A         &td_X_O         &td_J_E         &td_K_U         &td_B_H         &td_M_T         &td_W_N         &td_RET_S
-                                &trans          &kp UNDER       &rcw            &kp Z
+                                &trans          &trans          &kp UNDER       &kp Z
         >;
         };
 
         numbers {
         bindings = <
-                &td_PLUS_DOT    &kp N1          &kp N2          &kp N6          &kp N7          &kp MINUS
-&kp STAR        &kp N3          &kp N4          &kp N5          &kp N8          &kp N9          &kp N0          &kp FSLH
-                                &trans          &none           &none           &none
+                &kp N1          &kp N2          &kp N3          &kp N6          &kp N7          &kp N8
+&td_PLUS_DOT    &kp N4          &kp N5          &td_MINUS_UNDER &kp STAR        &kp N9          &kp N0          &kp FSLH
+                                &trans          &trans          &rcw            &none
         >;
         };
 
@@ -203,7 +203,7 @@
 
         system {
         bindings = <
-                &kp INS         &kp DEL         &kp HOME        &kp END         &kp UP          &kp CAPS
+                &kp INS         &kp DEL         &kp CAPS        &kp HOME        &kp UP          &kp END
 &kp K_APP       &kp PSCRN       &kp PG_UP       &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp PAUSE_BREAK
                                 &kp LSHFT       &none           &none           &none
         >;
@@ -212,8 +212,8 @@
 
         function_keys {
         bindings = <
-                &none           &kp F1          &kp F2          &kp F6          &kp F7          &none
-&none           &kp F3          &kp F4          &kp F5          &kp F8          &kp F9          &kp F10         &none
+                &kp F1          &kp F2          &kp F3          &kp F6          &kp F7          &kp F8
+&none           &kp F4          &kp F5          &none           &none           &kp F9          &kp F10         &none
                                 &kp F11         &none           &kp F17         &kp F12
         >;
         };
