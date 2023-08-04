@@ -187,8 +187,8 @@
 
         numbers {
         bindings = <
-                &kp N1          &kp N2          &kp N3          &kp N6          &kp N7          &kp N8
-&td_PLUS_DOT    &kp N4          &kp N5          &td_MINUS_UNDER &kp STAR        &kp N9          &kp N0          &kp FSLH
+                &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6
+&td_PLUS_DOT    &td_MINUS_UNDER &kp STAR        &kp FSLH        &kp N7          &kp N8          &kp N9          &kp N0
                                 &trans          &trans          &rcw            &none
         >;
         };
@@ -220,8 +220,8 @@
 
         function_keys {
         bindings = <
-                &kp F1          &kp F2          &kp F3          &kp F6          &kp F7          &kp F8
-&none           &kp F4          &kp F5          &none           &none           &kp F9          &kp F10         &none
+                &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6
+&none           &none           &none           &none           &kp F7          &kp F8          &kp F9          &kp F10
                                 &kp F11         &none           &kp F17         &kp F12
         >;
         };
