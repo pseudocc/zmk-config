@@ -179,8 +179,8 @@
 
         alpha_rare {
         bindings = <
-                &td_DOT_COMMA   &td_Y_P         &td_F_I         &td_G_D         &td_L_C         &td_V_R
-&td_Q_A         &td_X_O         &td_J_E         &td_K_U         &td_B_H         &td_M_T         &td_W_N         &td_RET_S
+                &kp DOT         &kp Y           &kp F           &kp G           &kp L           &kp V
+&kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp RET
                                 &trans          &trans          &kp UNDER       &kp Z
         >;
         };
