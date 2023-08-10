@@ -3,7 +3,7 @@
 if SHIELD_PIANO_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "The Piano 2"
+	default "The Piano 2 Love"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
