@@ -2,9 +2,11 @@ manifest:
   remotes:
     - name: pseudocc
       url-base: https://github.com/pseudocc
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
-      remote: pseudocc
+      remote: urob
       revision: main
       import: app/west.yml
   self:
