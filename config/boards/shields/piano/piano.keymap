@@ -155,6 +155,16 @@
             bindings = <&mo>, <&kp>;
         };
 
+        mr: momentary_keyrepeat {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOMENTARY_KEYREPEAT";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <250>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&key_repeat>;
+        };
+
         ms: momentary_stickylayer {
             compatible = "zmk,behavior-hold-tap";
             label = "MOMENTARY_STICKYLAYER";
@@ -171,17 +181,17 @@
 
         alpha_common {
         bindings = <
-                &mt LCTRL COMMA &mt LALT  P     &mt LCMD  I     &mt RCMD  D     &mt RALT  C     &mt RCTRL R
+                &mr LCTRL 0     &mt LALT  P     &mt LCMD  I     &mt RCMD  D     &mt RALT  C     &mt RCTRL R
 &mk FN    A     &mk SYM1  O     &mk SYM2  E     &mk SYS   U     &mk SYS   H     &mk SYM2  T     &mk SYM1  N     &mk SHC   S
-                                &mt LSHFT SPACE &key_repeat     &ms NUM   NUM   &ms ALR ALR
+                                &mt LSHFT SPACE &kp COMMA       &ms NUM   NUM   &ms ALR ALR
         >;
         };
 
         alpha_rare {
         bindings = <
-                &kp DOT         &kp Y           &kp F           &kp G           &kp L           &kp V
+                &key_repeat     &kp Y           &kp F           &kp G           &kp L           &kp V
 &kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp RET
-                                &trans          &trans          &kp UNDER       &kp Z
+                                &trans          &kp DOT         &kp UNDER       &kp Z
         >;
         };
 
@@ -189,7 +199,7 @@
         bindings = <
                 &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6
 &td_PLUS_DOT    &td_MINUS_UNDER &kp STAR        &kp FSLH        &kp N7          &kp N8          &kp N9          &kp N0
-                                &trans          &trans          &rcw            &none
+                                &trans          &none           &rcw            &none
         >;
         };
 
@@ -197,7 +207,7 @@
         bindings = <
                 &kp LBRC        &kp LBKT        &kp LPAR        &kp RPAR        &kp RBKT        &kp RBRC
 &kp CARET       &kp AT          &kp HASH        &kp DLLR        &kp COLON       &kp SEMI        &kp SQT         &kp DQT
-                                &kp LSHFT       &none           &none           &none
+                                &kp LSHFT       &none           &none           &kp SPACE
         >;
         };
 
@@ -205,18 +215,17 @@
         bindings = <
                 &kp AMPS        &kp PIPE        &kp EXCL        &kp QMARK       &kp PRCNT       &kp EQUAL
 &none           &kp BSLH        &kp GRAVE       &kp TILDE       &kp LT          &kp GT          &rarrow         &none
-                                &kp LSHFT       &none           &none           &none
+                                &kp LSHFT       &none           &none           &kp SPACE
         >;
         };
 
         system {
         bindings = <
-                &kp INS         &kp DEL         &kp CAPS        &kp HOME        &kp UP          &kp END
-&kp K_APP       &kp PSCRN       &kp PG_UP       &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp PAUSE_BREAK
+                &kp INS         &kp PG_UP       &kp CAPS        &kp HOME        &kp UP          &kp END
+&kp K_APP       &kp PSCRN       &kp PG_DN       &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp PAUSE_BREAK
                                 &kp LSHFT       &none           &none           &none
         >;
         };
-
 
         function_keys {
         bindings = <
