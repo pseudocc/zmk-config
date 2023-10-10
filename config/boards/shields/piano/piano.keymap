@@ -4,13 +4,14 @@
 #include <dt-bindings/zmk/bt.h>
 
 &mt {
-    tapping-term-ms = <250>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <150>;
+    require-prior-idle-ms = <100>;
     flavor = "tap-preferred";
 };
 
-&sk {
-    release-after-ms = <1000>;
-    quick-release;
+&sl {
+    release-after-ms = <500>;
 };
 
 #define PLCH 0
@@ -151,8 +152,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MOMENTARY_KEYPRESS";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <250>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -161,8 +163,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MOMENTARY_KEYREPEAT";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <250>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&key_repeat>;
         };
@@ -171,8 +174,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MOMENTARY_STICKYLAYER";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <250>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&sl>;
         };
