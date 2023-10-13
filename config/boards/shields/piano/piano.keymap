@@ -53,12 +53,6 @@
             layers = <ALC ALR NUM>;
         };
 
-        combo_alc {
-            timeout-ms = <COMBO_2KEYS>;
-            key-positions = <0 1 2>;
-            bindings = <&to ALC>;
-        };
-
         combo_del {
             timeout-ms = <COMBO_2KEYS>;
             key-positions = <3 4>;
@@ -75,8 +69,15 @@
 
         combo_lshft {
             timeout-ms = <COMBO_2KEYS>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
             bindings = <&sk LSHFT>;
+            layers = <ALC ALR>;
+        };
+
+        combo_rshft {
+            timeout-ms = <COMBO_2KEYS>;
+            key-positions = <11 12>;
+            bindings = <&sk RSHFT>;
             layers = <ALC ALR>;
         };
 
@@ -122,20 +123,6 @@
             label = "RIGHT_ARROW";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp MINUS &kp GT>;
-        };
-
-        git: git_sequence {
-            compatible = "zmk,behavior-macro";
-            label = "GIT_SEQUENCE";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp G &kp I &kp T>;
-        };
-
-        zig: zig_sequence {
-            compatible = "zmk,behavior-macro";
-            label = "ZIG_SEQUENCE";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp Z &kp I &kp G>;
         };
 
         viw: vi_write {
@@ -285,7 +272,7 @@
 
         shortcuts {
         bindings = <
-                &viq            &viw            &none           &git            &zig            &none
+                &viq            &viw            &none           &none           &none           &none
 &none           &none           &none           &none           &none           &none           &none           &none
                                 &none           &none           &none           &none
         >;
