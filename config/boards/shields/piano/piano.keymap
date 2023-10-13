@@ -32,7 +32,7 @@
 #include "mouse.dtsi"
 #include "dances.dtsi"
 
-#define COMBO_2KEYS 40
+#define COMBO_2KEYS 50
 #define COMBO_3KEYS (COMBO_2KEYS * 3 / 2)
 
 / {
@@ -53,6 +53,12 @@
             layers = <ALC ALR NUM>;
         };
 
+        combo_alc {
+            timeout-ms = <COMBO_2KEYS>;
+            key-positions = <0 1 2>;
+            bindings = <&to ALC>;
+        };
+
         combo_del {
             timeout-ms = <COMBO_2KEYS>;
             key-positions = <3 4>;
@@ -64,6 +70,20 @@
             timeout-ms = <COMBO_2KEYS>;
             key-positions = <4 5>;
             bindings = <&kp BSPC>;
+            layers = <ALC ALR NUM>;
+        };
+
+        combo_lshft {
+            timeout-ms = <COMBO_2KEYS>;
+            key-positions = <6 7>;
+            bindings = <&sk LSHFT>;
+            layers = <ALC ALR>;
+        };
+
+        combo_ret {
+            timeout-ms = <COMBO_2KEYS>;
+            key-positions = <12 13>;
+            bindings = <&kp RET>;
             layers = <ALC ALR NUM>;
         };
 
@@ -159,17 +179,6 @@
             bindings = <&mo>, <&kp>;
         };
 
-        mr: momentary_keyrepeat {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MOMENTARY_KEYREPEAT";
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&key_repeat>;
-        };
-
         ms: momentary_stickylayer {
             compatible = "zmk,behavior-hold-tap";
             label = "MOMENTARY_STICKYLAYER";
@@ -196,17 +205,17 @@
 
         alpha_common {
         bindings = <
-                &mr LCTRL PLCH  &mt LALT  P     &mt LCMD  I     &mt RCMD  D     &mt RALT  C     &mt RCTRL R
+                &mt LCTRL COMMA &mt LALT  P     &mt LCMD  I     &mt RCMD  D     &mt RALT  C     &mt RCTRL R
 &mk FN    A     &mk SYM1  O     &mk SYM2  E     &mk SYS   U     &mk SYS   H     &mk SYM2  T     &mk SYM1  N     &mk SHC   S
-                                &sm LSHFT SPACE &kp COMMA       &ms NUM   NUM   &ms ALR ALR
+                                &sm LSHFT SPACE &key_repeat     &ms NUM   NUM   &ms ALR ALR
         >;
         };
 
         alpha_rare {
         bindings = <
-                &key_repeat     &kp Y           &kp F           &kp G           &kp L           &kp V
-&kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp RET
-                                &trans          &kp Z           &rcw            &kp CAPS
+                &kp DOT         &kp F           &kp Y           &kp G           &kp L           &kp V
+&kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp Z
+                                &trans          &trans          &rcw            &kp UNDER
         >;
         };
 
@@ -237,7 +246,7 @@
         system {
         bindings = <
                 &kp INS         &kp PG_UP       &kp DEL         &kp HOME        &kp UP          &kp END
-&kp K_APP       &kp PSCRN       &kp PG_DN       &kp SLCK        &kp LEFT        &kp DOWN        &kp RIGHT       &kp PAUSE_BREAK
+&kp K_APP       &kp PSCRN       &kp PG_DN       &kp CAPS        &kp LEFT        &kp DOWN        &kp RIGHT       &kp PAUSE_BREAK
                                 &kp LSHFT       &none           &none           &none
         >;
         };
