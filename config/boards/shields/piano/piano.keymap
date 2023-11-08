@@ -209,7 +209,7 @@
         bindings = <
                 &kp DOT         &kp F           &kp Y           &kp G           &kp L           &kp V
 &kp Q           &kp X           &kp J           &kp K           &kp B           &kp M           &kp W           &kp Z
-                                &trans          &trans          &rcw            &kp UNDER
+                                &trans          &trans          &kp UNDER       &rcw
         >;
         };
 
