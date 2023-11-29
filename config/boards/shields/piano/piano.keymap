@@ -223,7 +223,7 @@
 
         symbols_1 {
         bindings = <
-                &kp LBKT        &kp LBRC        &kp LPAR        &kp RPAR        &kp RBRC        &kp RBKT
+                &kp LBRC        &kp LBKT        &kp LPAR        &kp RPAR        &kp RBKT        &kp RBRC
 &kp CARET       &kp AT          &kp HASH        &kp DLLR        &kp COLON       &kp SEMI        &kp SQT         &kp DQT
                                 &kp LSHFT       &none           &none           &kp SPACE
         >;
