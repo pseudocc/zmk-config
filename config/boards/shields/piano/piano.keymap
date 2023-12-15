@@ -53,6 +53,13 @@
             layers = <ALC ALR NUM>;
         };
 
+        combo_ctrl_shift {
+            timeout-ms = <COMBO_3KEYS>;
+            key-positions = <0 1 2>;
+            bindings = <&sk LS(LCTRL)>;
+            layers = <ALC ALR>;
+        };
+
         combo_del {
             timeout-ms = <COMBO_2KEYS>;
             key-positions = <3 4>;
@@ -191,6 +198,15 @@
             require-prior-idle-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+
+        ssk: slow_sticky_key {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SLOW_STICKY_KEY";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            ignore-modifiers;
+            bindings = <&sk>;
         };
     };
 
