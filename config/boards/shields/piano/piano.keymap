@@ -14,8 +14,6 @@
     release-after-ms = <500>;
 };
 
-#define PLCH 0
-
 #define ALC  0
 #define ALR  1
 #define NUM  2
@@ -125,6 +123,13 @@
     };
 
     macros {
+        larrow: left_arrow {
+            compatible = "zmk,behavior-macro";
+            label = "LEFT_ARROW";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LT &kp MINUS>;
+        };
+
         rarrow: right_arrow {
             compatible = "zmk,behavior-macro";
             label = "RIGHT_ARROW";
@@ -248,7 +253,7 @@
         symbols_2 {
         bindings = <
                 &kp AMPS        &kp PIPE        &kp EXCL        &kp QMARK       &kp PRCNT       &kp EQUAL
-&none           &kp BSLH        &kp GRAVE       &kp TILDE       &kp LT          &kp GT          &rarrow         &none
+&none           &kp BSLH        &kp GRAVE       &kp TILDE       &kp LT          &kp GT          &larrow         &rarrow
                                 &kp LSHFT       &none           &none           &kp SPACE
         >;
         };
@@ -280,15 +285,15 @@
         mouse_keys {
         bindings = <
                 &kp LCTRL       &mmv MOUSE_U    &none           &mkp MB1        &mkp MB2        &mkp MB3
-&none           &mmv MOUSE_L    &mmv MOUSE_D    &mmv MOUSE_R    &mkp MB4        &mkp MB5        &mkp MB6        &mkp MB7
+&none           &mmv MOUSE_L    &mmv MOUSE_D    &mmv MOUSE_R    &mkp MB4        &mkp MB5        &none           &none
                                 &mo WHID        &to ALC         &to ALC         &mo WHID
         >;
         };
 
         wheel_keys {
         bindings = <
-                &none           &mwh SCROLL_U   &none           &none           &none           &none
-&none           &mwh SCROLL_L   &mwh SCROLL_D   &mwh SCROLL_R   &none           &none           &none           &none
+                &none           &msc SCROLL_U   &none           &none           &none           &none
+&none           &msc SCROLL_L   &msc SCROLL_D   &msc SCROLL_R   &none           &none           &none           &none
                                 &none           &none           &none           &none
         >;
         };

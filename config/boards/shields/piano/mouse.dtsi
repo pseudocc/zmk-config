@@ -1,21 +1,27 @@
 // vim: ft=dts ts=4 sts=4 sw=4 et
 #include <dt-bindings/zmk/mouse.h>
 
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 15
+
 &mmv {
     acceleration-exponent = <1>;
     time-to-max-speed-ms = <1000>;
     delay-ms = <0>;
 };
 
-#define MOUSE_MOVE_SPEED 1500
-#define MOUSE_SCROLL_SPEED 15
+&msc {
+    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <1000>;
+    delay-ms = <0>;
+};
 
-#define MOUSE_U MOVE_VERT(-MOUSE_MOVE_SPEED)
-#define MOUSE_D MOVE_VERT(MOUSE_MOVE_SPEED)
-#define MOUSE_L MOVE_HOR(-MOUSE_MOVE_SPEED)
-#define MOUSE_R MOVE_HOR(MOUSE_MOVE_SPEED)
+#define MOUSE_U MOVE_UP
+#define MOUSE_D MOVE_DOWN
+#define MOUSE_L MOVE_LEFT
+#define MOUSE_R MOVE_RIGHT
 
-#define SCROLL_U SCROLL_VERT(MOUSE_SCROLL_SPEED)
-#define SCROLL_D SCROLL_VERT(-MOUSE_SCROLL_SPEED)
-#define SCROLL_L SCROLL_HOR(-MOUSE_SCROLL_SPEED)
-#define SCROLL_R SCROLL_HOR(MOUSE_SCROLL_SPEED)
+#define SCROLL_U SCRL_UP
+#define SCROLL_D SCRL_DOWN
+#define SCROLL_L SCRL_LEFT
+#define SCROLL_R SCRL_RIGHT
