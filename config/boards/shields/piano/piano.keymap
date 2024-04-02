@@ -14,6 +14,12 @@
     release-after-ms = <500>;
 };
 
+&sk {
+    // I types so fast that "&sk LSHFT &kp T &kp H &kp E"
+    // becomes "THe" instead of "The".
+    quick-release;
+};
+
 #define ALC  0
 #define ALR  1
 #define NUM  2
