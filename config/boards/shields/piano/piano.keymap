@@ -259,7 +259,7 @@
         symbols_2 {
         bindings = <
                 &kp AMPS        &kp PIPE        &kp EXCL        &kp QMARK       &kp PRCNT       &kp EQUAL
-&none           &kp BSLH        &kp GRAVE       &kp TILDE       &kp LT          &kp GT          &larrow         &rarrow
+&none           &kp BSLH        &kp GRAVE       &kp TILDE       &larrow         &kp LT          &kp GT          &rarrow
                                 &kp LSHFT       &none           &none           &kp SPACE
         >;
         };
