@@ -1,5 +1,8 @@
 # vim: ft=kconfig ts=4 sts=4 sw=4 noet
 
+config ZMK_KSCAN_DEBOUNCE_RELEASE_MS
+	default 10
+
 if SHIELD_PIANO_RIGHT
 
 config ZMK_KEYBOARD_NAME
